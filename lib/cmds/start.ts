@@ -143,6 +143,8 @@ function start(options: Options) {
     args.push(
         '-Dwebdriver.chrome.driver=' +
         path.resolve(outputDir, binaries[ChromeDriver.id].executableFilename(osType)));
+    console.log('chromedriver args added!');
+    args.push('-Dwebdriver.chrome.args="--whitelisted-ips="');
     if (chromeLogs != null) {
       args.push('-Dwebdriver.chrome.logfile=' + chromeLogs);
     }
